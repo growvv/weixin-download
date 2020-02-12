@@ -35,7 +35,9 @@
 以下是我的几点探索：
 1. you_get的用法：参考[you-get官方文档](https://github.com/soimort/you-get)，添加输出重命名。
 2. with的使用：参考[Python 中 with用法及原理](https://blog.csdn.net/u012609509/article/details/72911564)，实现出错也能返回提示信息。
-3. os.remove()：增加删除本地文件，因为最后程序会挂到VPS上，上传到OSS上后VPS上的文件就没必要保留了。
+3. os.remove(path)：增加删除本地文件，因为最后程序会挂到VPS上，上传到OSS上后VPS上的文件就没必要保留了。
+4. os.path.basename(url)：从url中提取文件名
+5. from urllib.parse import quote, unquote：url编码解码
 
 ## 四、有待改进
 1. 如果多人同时发送下载链接呢？
