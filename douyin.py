@@ -54,7 +54,7 @@ def do_download(video_url, v_info):
             remote_path = "auto-upload" + time.strftime('/%Y-%m-%d/') + reset_name
             print(remote_path)
             try:
-                auth = oss2.Auth("LTAI4Ffd8ttwSFfkvVLWVbjW", "H19Zx3oXgZ0iSLeWal84gn53piSqdv")
+                auth = oss2.Auth("access_key_id", "access_key_secret")
                 endpoint = 'http://oss-cn-beijing.aliyuncs.com'
                 bucket = oss2.Bucket(auth, endpoint, 'weixin-download')
                 bucket.put_object_from_file(remote_path, local_file)
