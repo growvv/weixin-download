@@ -35,11 +35,23 @@
 以下是我的几点探索：
 1. you_get的用法：参考[you-get官方文档](https://github.com/soimort/you-get)，添加输出重命名。
 2. with的使用：参考[Python 中 with用法及原理](https://blog.csdn.net/u012609509/article/details/72911564)，实现出错也能返回提示信息。
-3. os.remove(path)：增加删除本地文件，因为最后程序会挂到VPS上，上传到OSS上后VPS上的文件就没必要保留了。
-4. os.path.basename(url)：从url中提取文件名
-5. from urllib.parse import quote, unquote：url编码解码
+3. os.remove()：增加删除本地文件，因为最后程序会挂到VPS上，上传到OSS上后VPS上的文件就没必要保留了。
 
-## 四、有待改进
+## 四、部署到vps
+就一个python程序，部署起来还是很简单的，最主要的是我们要让我一直保持运行，这里采用<code>nohup</code>。
+
+```bash
+nohup python3 douyin.py > dy.log &
+```
+
+如果要关掉某个nohup呢？
+
+采用kill进程的方式，使用<code>ps -ef</code>查看当前所有进程，在用<code>kill -9 PID</code>杀死对应进程
+
+![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200212125650.png)
+
+
+## 五、有待改进
 1. 如果多人同时发送下载链接呢？
 2. 出错处理有待完善
 3. 找一个挂py代码的平台？
