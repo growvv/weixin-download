@@ -38,7 +38,7 @@
 3. os.remove()：增加删除本地文件，因为最后程序会挂到VPS上，上传到OSS上后VPS上的文件就没必要保留了。
 
 ## 四、部署到vps
-就一个python程序，部署起来还是很简单的，最主要的是我们要让我一直保持运行，这里采用<code>nohup</code>。
+就一个python程序，部署起来还是很简单的，最主要的是我们要让它一直保持运行，这里采用<code>nohup</code>。
 
 ```bash
 nohup python3 douyin.py > dy.log &
@@ -46,12 +46,13 @@ nohup python3 douyin.py > dy.log &
 
 如果要关掉某个nohup呢？
 
-采用kill进程的方式，使用<code>ps -ef</code>查看当前所有进程，在用<code>kill -9 PID</code>杀死对应进程
+采用kill进程的方式，使用<code>ps -ef</code>查看当前所有进程，再用<code>kill -9 PID</code>杀死对应进程
 
 ![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200212125650.png)
 
 
 ## 五、有待改进
 1. 如果多人同时发送下载链接呢？
-2. 出错处理有待完善
-3. 找一个挂py代码的平台？
+2. 如果一个同时发多个链接，能搞个多线程下载吗？
+3. 出错处理有待完善
+4. 找一个挂py代码的平台？
