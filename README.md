@@ -58,7 +58,7 @@ nohup python3 douyin.py > dy.log &
 
 我猜测是之前某次异常退出，导致缓存的信息有误，从而热加载出错。
 
-解决方法是很简单：要么设置 <code>hotReload=False</code> ，要么删除缓存文件 <code>itchat.pkl</code> 。
+**解决方法**也很简单：要么设置 <code>hotReload=False</code> ，要么删除缓存文件 <code>itchat.pkl</code> 。
 
 ## 六、有待改进
 1. 如果多人同时发送下载链接呢？
