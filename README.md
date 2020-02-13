@@ -50,8 +50,17 @@ nohup python3 douyin.py > dy.log &
 
 ![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200212125650.png)
 
+## 五、记录一个出错解决方法
 
-## 五、有待改进
+使用 <code>itchat.auto_login(hotReload=True, enableCmdQR=1)</code> 时报错如下：
+
+![](https://cdn.jsdelivr.net/gh/growvv/img/images/20200213144827.png)
+
+我猜测是之前某次异常退出，导致缓存的信息有误，从而热加载出错。
+
+解决方法是很简单：要么设置 <code>hotReload=False</code> ，要么删除缓存文件 <code>itchat.pkl</code> 。
+
+## 六、有待改进
 1. 如果多人同时发送下载链接呢？
 2. 如果一个同时发多个链接，能搞个多线程下载吗？
 3. 出错处理有待完善
